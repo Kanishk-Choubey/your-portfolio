@@ -1,17 +1,48 @@
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #333;
+  --card-bg: #fff;
+  --accent-color: #007bff;
+  --header-footer-bg: #111;
+  --header-footer-text: white;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --card-bg: #1e1e1e;
+  --accent-color: #4dabf7;
+  --header-footer-bg: #000;
+  --header-footer-text: #eee;
+}
+
 body {
   font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
 }
 
 header, footer {
-  background: #111;
-  color: white;
+  background: var(--header-footer-bg);
+  color: var(--header-footer-text);
   text-align: center;
   padding: 2rem;
+  position: relative;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 section {
@@ -21,12 +52,12 @@ section {
 }
 
 h2 {
-  border-bottom: 2px solid #007bff;
+  border-bottom: 2px solid var(--accent-color);
   padding-bottom: 0.5rem;
 }
 
 .project {
-  background: white;
+  background: var(--card-bg);
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 8px;
@@ -39,10 +70,12 @@ form input, form textarea {
   margin: 0.5rem 0;
   border-radius: 6px;
   border: 1px solid #ccc;
+  background: var(--card-bg);
+  color: var(--text-color);
 }
 
 form button {
-  background: #007bff;
+  background: var(--accent-color);
   color: white;
   border: none;
   padding: 0.7rem 1.2rem;
