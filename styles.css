@@ -1,84 +1,33 @@
-:root {
-  --bg-color: #f4f4f4;
-  --text-color: #333;
-  --card-bg: #fff;
-  --accent-color: #007bff;
-  --header-footer-bg: #111;
-  --header-footer-text: white;
-}
-
-body.dark {
-  --bg-color: #121212;
-  --text-color: #eee;
-  --card-bg: #1e1e1e;
-  --accent-color: #4dabf7;
-  --header-footer-bg: #000;
-  --header-footer-text: #eee;
-}
-
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
   margin: 0;
-  padding: 0;
-  line-height: 1.6;
+  background: #f0f0f0;
 }
 
-header, footer {
-  background: var(--header-footer-bg);
-  color: var(--header-footer-text);
+header {
+  background: #333;
+  color: white;
   text-align: center;
-  padding: 2rem;
-  position: relative;
-}
-
-.toggle-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: var(--card-bg);
-  color: var(--text-color);
-  border: 1px solid var(--text-color);
-  border-radius: 20px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
+  padding: 100px 20px;
 }
 
 section {
-  padding: 2rem;
-  max-width: 800px;
+  padding: 50px 20px;
+  max-width: 900px;
   margin: auto;
 }
 
-h2 {
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 0.5rem;
-}
-
-.project {
-  background: var(--card-bg);
-  padding: 1rem;
-  margin-bottom: 1rem;
+.project-card {
+  background: white;
+  padding: 20px;
+  margin: 10px 0;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px #ccc;
 }
 
-form input, form textarea {
-  width: 100%;
-  padding: 0.7rem;
-  margin: 0.5rem 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background: var(--card-bg);
-  color: var(--text-color);
-}
-
-form button {
-  background: var(--accent-color);
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
   color: white;
-  border: none;
-  padding: 0.7rem 1.2rem;
-  cursor: pointer;
-  border-radius: 6px;
 }
