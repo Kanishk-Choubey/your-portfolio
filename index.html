@@ -2,61 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Web Developer</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+
   <header>
-    <h1>Kanishk Choubey</h1>
-    <p>Frontend Developer | HTML | CSS | JavaScript</p>
-    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    <h1>Hi, I'm Aryan</h1>
+    <p>Front-End Developer | Student</p>
+    <a href="#projects">See My Work</a>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>Hi! I'm Kanishk Choubey, an 18-year-old developer focused on building modern, responsive websites. I help businesses and creators launch fast, clean, and mobile-friendly websites using HTML, CSS, and JavaScript.</p>
+    <p>I’m a self-taught developer learning JavaScript, HTML, and CSS. I build cool web projects and love solving problems.</p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project">
-      <h3>Personal Portfolio Website</h3>
-      <p>Built using HTML, CSS, and JavaScript. A clean and modern portfolio with responsive design.</p>
-      <a href="#" target="_blank">View Project</a>
+    <div class="project-card">
+      <h3>To-Do App</h3>
+      <p>JavaScript project with localStorage support.</p>
     </div>
-    <!-- Add more projects as you grow -->
   </section>
 
   <section id="contact">
     <h2>Contact Me</h2>
-    <form action="https://formspree.io/f/xjkwdjwe" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="_replyto" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Email" required />
+      <textarea placeholder="Message" required></textarea>
       <button type="submit">Send</button>
     </form>
   </section>
 
   <footer>
-    <p>© 2025 Your Name. All rights reserved.</p>
+    <p>&copy; 2025 Aryan. All Rights Reserved.</p>
   </footer>
-  <script>
-  // Check for saved theme
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark");
-  }
 
-  function toggleDarkMode() {
-    document.body.classList.toggle("dark");
-    // Save preference
-    if (document.body.classList.contains("dark")) {
-      localStorage.setItem("theme", "dark");
-    } else {
-      localStorage.setItem("theme", "light");
-    }
-  }
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
