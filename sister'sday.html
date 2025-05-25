@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 Happy Sister Day 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Floating Hearts Animation */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 182, 193, 0.7);
+            font-size: 20px;
+            animation: float 8s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Header Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(135deg, 
+                rgba(255, 182, 193, 0.9) 0%, 
+                rgba(255, 192, 203, 0.8) 50%, 
+                rgba(221, 160, 221, 0.9) 100%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 15px 35px rgba(255, 182, 193, 0.3);
+            }
+            100% {
+                box-shadow: 0 15px 35px rgba(255, 182, 193, 0.6);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Messages Section */
+        .messages-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #ffeef8 0%, #f8e8ff 100%);
+            position: relative;
+            z-index: 2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: #8e44ad;
+            margin-bottom: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .messages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .message-card {
+            background: linear-gradient(135deg, #fff 0%, #ffeef8 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.8s ease-out forwards;
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s;
+            opacity: 0;
+        }
+
+        .message-card:hover::before {
+            animation: shine 0.6s ease-in-out;
+        }
+
+        .message-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3);
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .message-card:nth-child(1) { animation-delay: 0.2s; }
+        .message-card:nth-child(2) { animation-delay: 0.4s; }
+        .message-card:nth-child(3) { animation-delay: 0.6s; }
+
+        .message-card h3 {
+            color: #e91e63;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .message-card p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        /* Interactive Quote */
+        .interactive-quote {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 2rem 0;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .interactive-quote:hover {
+            transform: scale(1.02);
+        }
+
+        .interactive-quote::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .interactive-quote:hover::before {
+            left: 100%;
+        }
+
+        .quote-text {
+            font-size: 2rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-author {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Memory Wall */
+        .memory-wall {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+        }
+
+        .polaroid {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: rotate(-2deg);
+            margin: 1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .polaroid:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.1);
+            z-index: 10;
+        }
+
+        .polaroid-img {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #ffeef8, #f8e8ff);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #e91e63;
+            margin-bottom: 1rem;
+        }
+
+        .polaroid-caption {
+            text-align: center;
+            color: #555;
+            font-style: italic;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.2rem; }
+            .section-title { font-size: 2rem; }
+            .quote-text { font-size: 1.5rem; }
+            .messages-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .footer-heart {
+            color: #e91e63;
+            font-size: 1.5rem;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="floating-hearts" id="floating-hearts"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="date-badge">May 25th, 2025</div>
+            <h1>💕 Happy Sister Day! 💕</h1>
+            <p>Celebrating the incredible bond between sisters everywhere</p>
+            <p>✨ A day to honor the special women who share our hearts and memories ✨</p>
+        </div>
+    </section>
+
+    <!-- Messages Section -->
+    <section class="messages-section">
+        <div class="container">
+            <h2 class="section-title">Beautiful Messages for Sisters</h2>
+            
+            <div class="messages-grid">
+                <div class="message-card">
+                    <h3>👭 To My Sister, My Best Friend</h3>
+                    <p>"A sister is both your mirror and your opposite. She's the person who knows you better than anyone else, loves you unconditionally, and will always be there to catch you when you fall. Thank you for being my constant source of strength, laughter, and love."</p>
+                </div>
+                
+                <div class="message-card">
+                    <h3>🌟 Childhood Memories</h3>
+                    <p>"From sharing secrets under blanket forts to supporting each other through life's biggest challenges, our bond has only grown stronger. You've been my partner in crime, my voice of reason, and my biggest cheerleader. I'm so grateful to call you my sister."</p>
+                </div>
+                
+                <div class="message-card">
+                    <h3>💖 Forever Connected</h3>
+                    <p>"Distance may separate us, time may change us, but nothing will ever break the special bond we share. You're not just my sister – you're a piece of my heart walking around in the world. Happy Sister Day to the most amazing woman I know!"</p>
+                </div>
+            </div>
+
+            <div class="interactive-quote" onclick="changeQuote()">
+                <div class="quote-text" id="quote-text">
+                    "Sisters are different flowers from the same garden."
+                </div>
+                <div class="quote-author" id="quote-author">- Unknown</div>
+                <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">Click to see more beautiful quotes!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memory Wall -->
+    <section class="memory-wall">
+        <div class="container">
+            <h2 class="section-title">Memory Wall</h2>
+            <div style="text-align: center;">
+                <div class="polaroid">
+                    <div class="polaroid-img">👭</div>
+                    <div class="polaroid-caption">Sisters Forever</div>
+                </div>
+                
+                <div class="polaroid">
+                    <div class="polaroid-img">🎂</div>
+                    <div class="polaroid-caption">Birthday Celebrations</div>
+                </div>
+                
+                <div class="polaroid">
+                    <div class="polaroid-img">🌸</div>
+                    <div class="polaroid-caption">Spring Adventures</div>
+                </div>
+                
+                <div class="polaroid">
+                    <div class="polaroid-img">🎭</div>
+                    <div class="polaroid-caption">Silly Moments</div>
+                </div>
+                
+                <div class="polaroid">
+                    <div class="polaroid-img">🌟</div>
+                    <div class="polaroid-caption">Special Occasions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="margin-bottom: 2rem;">Celebrate Your Sister Today!</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem;">Take a moment to reach out and let your sister know how much she means to you.</p>
+            
+            <button class="cta-button" onclick="sendMessage()">📱 Send a Message</button>
+            <button class="cta-button" onclick="planSurprise()">🎁 Plan a Surprise</button>
+            <button class="cta-button" onclick="shareMemory()">📸 Share a Memory</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with <span class="footer-heart">♥</span> for sisters everywhere</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">© 2025 Sister Day Celebration</p>
+    </footer>
+
+    <script>
+        // Floating hearts animation
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '💖';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
+            
+            document.getElementById('floating-hearts').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+
+        // Create hearts periodically
+        setInterval(createFloatingHeart, 1500);
+
+        // Interactive quotes
+        const quotes = [
+            {
+                text: "Sisters are different flowers from the same garden.",
+                author: "Unknown"
+            },
+            {
+                text: "A sister is a gift to the heart, a friend to the spirit, a golden thread to the meaning of life.",
+                author: "Isadora James"
+            },
+            {
+                text: "Sisters may drive you crazy, get into your stuff, and irritate you. However, if anyone else dares say so, a sister will defend you to the death.",
+                author: "Unknown"
+            },
+            {
+                text: "Having a sister is like having a best friend you can't get rid of. You know whatever you do, they'll still be there.",
+                author: "Amy Li"
+            },
+            {
+                text: "Sisters share the scent and smells... the feel of a common childhood.",
+                author: "Pam Brown"
+            }
+        ];
+
+        let currentQuote = 0;
+
+        function changeQuote() {
+            currentQuote = (currentQuote + 1) % quotes.length;
+            const quoteText = document.getElementById('quote-text');
+            const quoteAuthor = document.getElementById('quote-author');
+            
+            // Fade out
+            quoteText.style.opacity = '0';
+            quoteAuthor.style.opacity = '0';
+            
+            setTimeout(() => {
+                quoteText.textContent = quotes[currentQuote].text;
+                quoteAuthor.textContent = '- ' + quotes[currentQuote].author;
+                
+                // Fade in
+                quoteText.style.opacity = '1';
+                quoteAuthor.style.opacity = '1';
+            }, 300);
+        }
+
+        // CTA Button functions
+        function sendMessage() {
+            alert('💌 What a wonderful idea! Send your sister a heartfelt message telling her how much she means to you. A simple "I love you" can make her entire day!');
+        }
+
+        function planSurprise() {
+            alert('🎁 Amazing! Consider planning something special - maybe her favorite meal, a surprise visit, or a thoughtful gift that shows you were thinking of her.');
+        }
+
+        function shareMemory() {
+            alert('📸 Beautiful! Share a favorite photo or memory with your sister. Reminiscing about good times together strengthens your bond and creates new happy moments.');
+        }
+
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add some initial hearts
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createFloatingHeart, i * 300);
+        }
+    </script>
+</body>
+</html>
