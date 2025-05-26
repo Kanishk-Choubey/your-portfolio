@@ -31,19 +31,19 @@ footer {
   background: #222;
   color: white;
 }
-#contact {
+.contact {
   background-color: #f9f9f9;
   padding: 40px 20px;
   text-align: center;
 }
 
-#contact h2 {
+.contact h2 {
   font-size: 2em;
   margin-bottom: 20px;
   color: #333;
 }
 
-#contact-form {
+.contact-form {
   max-width: 500px;
   margin: 0 auto;
   display: flex;
@@ -51,8 +51,8 @@ footer {
   gap: 15px;
 }
 
-#contact-form input,
-#contact-form textarea {
+.contact-form input,
+.contact-form textarea {
   padding: 12px 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -60,18 +60,18 @@ footer {
   transition: border-color 0.3s;
 }
 
-#contact-form input:focus,
-#contact-form textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
   border-color: #0077ff;
   outline: none;
 }
 
-#contact-form textarea {
+.contact-form textarea {
   resize: vertical;
   min-height: 120px;
 }
 
-#contact-form button {
+.contact-form button {
   background-color: #0077ff;
   color: white;
   padding: 12px;
@@ -82,7 +82,7 @@ footer {
   transition: background-color 0.3s;
 }
 
-#contact-form button:hover {
+.contact-form button:hover {
   background-color: #005dd1;
 }
 
