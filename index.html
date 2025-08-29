@@ -1,62 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
+  <title>Kanishk | Portfolio</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
-  <header>
-    <h1>Hi, I'm Kanishk Choubey</h1>
-    <p>Front-End Developer | Student</p>
-    <a href="Center.html">See My Work</a>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header id="hero">
+    <h1 id="hero-title">Hi, I'm <span>Kanishk Choubey</span></h1>
+    <p id="hero-sub">Front-End Developer | Student</p>
+    <a href="#projects" id="hero-btn">See My Work</a>
   </header>
 
+  <!-- About -->
   <section id="about">
     <h2>About Me</h2>
     <p>I’m a self-taught developer learning JavaScript, HTML, and CSS. I build cool web projects and love solving problems.</p>
   </section>
 
+  <!-- Projects -->
   <section id="projects">
     <h2>Projects</h2>
-
-    <div class="project-card">
-      <h3>Happy Sister's Day Card</h3>
-      <a href="sister'sday.html" target="_blank">View Project</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Love One Card</h3>
-      <a href="love.html" target="_blank">View Project</a>
-    </div>
-   <div class="project-card">
-      <h3>Portfolio Website</h3>
-      <a href="portfolio.html" target="_blank">View Project</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Animated Login Form</h3>
-      <a href="Form.html" target="_blank">View Project</a>
-    </div>
-
+    <a href="sister'sday.html"><div class="project-card">Happy Sister's Day Card</div></a>
+    <a href="love.html"><div class="project-card">Love One Card</div></a>
+    <a href="Center.html"><div class="project-card">Center</div></a>
+    <a href="Form.html"><div class="project-card">Animated Login Form</div></a>
   </section>
 
-  <section class="contact">
+  <!-- Contact -->
+  <section id="contact">
     <h2>Contact Me</h2>
-    <form id="contact-form" action="https://formspree.io/f/xjkwdjwe" method="post">
-      <input type="text" placeholder="Your Name" name="name" required />
-      <input type="email" placeholder="Email" name="email" required />
+    <form id="contact-form" action="https://formspree.io/f/xjkwdjwe" method="POST">
+      <input type="text" placeholder="Your Name" name="name" required/>
+      <input type="email" placeholder="Email" name="email" required/>
       <textarea placeholder="Message" name="message" required></textarea>
       <button type="submit">Send</button>
     </form>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Kanishk Choubey. All Rights Reserved.</p>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
